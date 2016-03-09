@@ -207,6 +207,7 @@
 				TargetAttributes = {
 					6489A61F1C8FEF29000257EF = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 3RTPA62VT2;
 					};
 					6489A6381C8FEF29000257EF = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -411,6 +412,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = UIPickImageController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fushike.UIPickImageController;
@@ -422,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = UIPickImageController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fushike.UIPickImageController;
