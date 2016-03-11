@@ -46,39 +46,18 @@
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo
-{
-        NSURL *url=[editingInfo objectForKey:UIImagePickerControllerMediaURL];//视频路径
-        NSString *urlStr=[url path];
-//        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(urlStr)) {
-//            //保存视频到相簿，注意也可以使用ALAssetsLibrary来保存
-//            UISaveVideoAtPathToSavedPhotosAlbum(urlStr, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);//保存视频到相簿
-//        }
-//    
-//   }
-    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-    [library enumerateGroupsWithTypes:ALAssetsGroupAlbum usingBlock:^(ALAssetsGroup *group,BOOL *stop) {
-        if (group.numberOfAssets >0) {
-            NSIndexSet *videoSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, group.numberOfAssets)];
-            [group enumerateAssetsAtIndexes:videoSet options:0 usingBlock:^(ALAsset *result,NSUInteger index,BOOL *stop){
-                ALAssetRepresentation *representation = [result defaultRepresentation];
-                NSString *savingPath = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/%@",representation.filename];
-                [[NSFileManager defaultManager] createDirectoryAtPath:savingPath withIntermediateDirectories:nil attributes:nil error:nil];
-                NSFileHandle *writingHandle = [NSFileHandle fileHandleForWritingAtPath:savingPath];
-            }];
-        }
-    }failureBlock:nil];
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    NSURL *url=[info objectForKey:UIImagePickerControllerMediaURL];//视频路径
+    NSString *urlStr=[url path];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-    
-//- (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo: (void *)contextInfo {
-//        
-//        NSLog(@"%@",videoPath);
-//        
-//        NSLog(@"%@",error);
-//        
-// }
-    
+
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
